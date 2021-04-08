@@ -17,6 +17,10 @@ spec:
       - name: BUILDER_IMAGE
         description: The image on which builds will run
         default: myapp:latest
+      - name: test-type
+        type: string
+
+
   steps:
     - name: docker
       image: docker
@@ -27,7 +31,7 @@ spec:
         - -f
         - $(inputs.params.DOCKERFILE)
         - -t
-        - $(inputs.params.BUILDER_IMAGE)
+        - $(inputs.params.test-type)
         - $(inputs.params.CONTEXT)
       volumeMounts:
         - name: docker-socket

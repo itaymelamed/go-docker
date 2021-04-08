@@ -1,0 +1,29 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: myapp
+spec:
+  resources:
+    - name: source
+      type: git
+  tasks:
+    - name: build
+      taskRef:
+        name: build-docker
+      params:
+        - name: BUILDER_IMAGE
+          value: posts-service
+      resources:
+        inputs:
+          - name: source
+            resource: source
+    - name: build
+      taskRef:
+        name: build-docker
+      params:
+        - name: BUILDER_IMAGE
+          value: editor-service
+      resources:
+        inputs:
+          - name: source
+            resource: source

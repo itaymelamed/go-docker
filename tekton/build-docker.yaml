@@ -13,6 +13,7 @@ spec:
       - name: CONTEXT
         default: ./
       - name: BUILDER_IMAGE
+        description: the ibmcloud api key
 
   steps:
     - name: docker

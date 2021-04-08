@@ -13,7 +13,6 @@ spec:
       - name: CONTEXT
         default: ./
       - name: BUILDER_IMAGE
-        value: $(inputs.params.BUILDER_IMAGE)
 
   steps:
     - name: docker

@@ -1,8 +1,0 @@
-apiVersion: custom.tekton.dev/v1alpha1
-kind: TaskLoop
-metadata:
-  name: testloop
-spec:
-  taskRef:
-    name: build-dokcer
-  iterateParam: tag

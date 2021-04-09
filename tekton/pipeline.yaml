@@ -13,13 +13,3 @@ spec:
       params:
         - name: BUILDER_IMAGE
           value: posts-service
-     - name: build
-      taskRef:
-        name: editor-service           
-      params:
-        - name: BUILDER_IMAGE
-          value: editor-service           
-      resources:
-        inputs:
-          - name: source
-            resource: source

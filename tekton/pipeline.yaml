@@ -13,3 +13,9 @@ spec:
       params:
         - name: BUILDER_IMAGE
           value: posts-service
+    - name: editor-service
+      taskRef:
+        name: build-docker
+      params:
+        - name: BUILDER_IMAGE
+          value: editor-service
